@@ -26,6 +26,18 @@ func TestFormatRegistered(t *testing.T) {
 	if w, h := img.Bounds().Dx(), img.Bounds().Dy(); w != 1596 || h != 1064 {
 		t.Errorf("unexpected decoded image size: got %dx%d, want 1596x1064", w, h)
 	}
+
+	/*
+		f, err := os.Create("demo.png")
+		if err != nil {
+			t.Fatalf("unable to decode heic image: %s", err)
+		}
+		defer f.Close()
+
+		err = png.Encode(f, img)
+		if err != nil {
+			t.Fatalf("unable to decode heic image: %s", err)
+		}*/
 }
 
 func BenchmarkSafeEncoding(b *testing.B) {
